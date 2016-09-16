@@ -65,6 +65,9 @@ while ( i < namematches.length ) {
 	 text += input.substring(namematches[i]+6, prodidmatches[i]) + input.substring(quanmatches[i]+10, skumatches[i]);
 	i++;
 }
+//Cleanup a specific HTML character and apostrophe coming from Woo
+var text = text.replace(/&rarr;/g, "->");
+var text = text.replace(/&#8217;/g, "\'");
 
 //Zapier expects an object called 'output' back, even though it's overkill in this case. So we give it an object with only one item. Any added items will show up as their own fields within Zapier.
 
